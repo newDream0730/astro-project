@@ -10,6 +10,6 @@ export default defineConfig({
   adapter: netlify(),
   integrations: [react()],
   site: 'https://astro-project.netlify.app',
-  base: '/gpm-lds-astro',
+  // base: '/gpm-lds-astro',
   clientEntrypoint: '@astrojs/react/client.js',
 });
