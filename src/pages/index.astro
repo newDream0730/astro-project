@@ -9,9 +9,9 @@ const user = getUser({ client: Astro });
 //   } else {
 //     return redirectUser(`/en`);
 //   }
-if(import.meta.env.PROD){
+if(!import.meta.env.PROD){
   if (!user) {
-  	return redirectUser(`/auth`);
+  	return redirectUser(`/en`);
   } else {
     return redirectUser(`/en`);
   }
