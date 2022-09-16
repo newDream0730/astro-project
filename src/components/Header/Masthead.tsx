@@ -141,7 +141,7 @@ export default function Header(props: any) {
           />
           
         </SLDSGlobalHeader>
-        <div className='slds-m-right_x-large' style={{display: "flex"}}>
+        {/* <div className='slds-m-right_x-large' style={{display: "flex"}}>
           <Button label="Add/Suggest" variant="brand" className='slds-m-right_small' responsive />
           <Button 
             label="Login"
@@ -151,7 +151,6 @@ export default function Header(props: any) {
 						isOpen={isOpen}
 						onRequestClose={() => setIsOpen(false)}
 					>
-						{/* <section className="slds-p-around_large"> */}
 							{
                 authMode === "signin" ? (
                   <SignIn authModeChange={changeAuthMode} />
@@ -159,13 +158,12 @@ export default function Header(props: any) {
                   <SignUp authModeChange={changeAuthMode} />
                 )
               }
-						{/* </section> */}
 					</Modal>
-        </div>
-        {/* <GlobalHeaderProfile
+        </div> */}
+        <GlobalHeaderProfile
           popover={<Popover body={<HeaderProfileCustomContent />} id="header-profile-popover-id" />}
           userName="User"
-        /> */}
+        />
       </div>
     </IconSettings>
   );

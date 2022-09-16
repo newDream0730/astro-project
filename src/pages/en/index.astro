@@ -2,14 +2,14 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Container from '@components/Container/index.astro';
 
-// import { getUser } from "@astro-auth/core";
+import { getUser } from "@astro-auth/core";
 
-// const user = getUser({ client: Astro });
+const user = getUser({ client: Astro });
 ---
 
 <BaseLayout>
   <Container>
-    <!-- <h1>Welcome {user.user.name}!</h1> -->
+    <h1>Welcome {user.user.name}!</h1>
     <h1>Landing page</h1>
   </Container>
 </BaseLayout>
