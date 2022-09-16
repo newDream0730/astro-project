@@ -9,7 +9,7 @@ export default function Login() {
             <div className="container">
                 <div className="form-container log-in-container">
                     <form action="#">
-                        <h1>Login</h1>
+                        <h1>Login XXX</h1>
                         <input type="email" placeholder="Email" />
                         <input type="password" placeholder="Password" />
                         <a href="#">Forgot your password?</a>

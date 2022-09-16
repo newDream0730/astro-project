@@ -4,20 +4,20 @@ import { BASE_SITE_URL } from "src/config.astro";
 
 const user = getUser({ client: Astro });
 
-if (!user) {
-  	return redirectUser(`/auth`);
-  } else {
-    return redirectUser(`/en`);
-  }
-// if(import.meta.env.PROD){
-//   if (!user) {
+// if (!user) {
 //   	return redirectUser(`/auth`);
 //   } else {
 //     return redirectUser(`/en`);
 //   }
-// } else {
-//   return redirectUser(`${BASE_SITE_URL}/en`);
-// }
+if(import.meta.env.PROD){
+  if (!user) {
+  	return redirectUser(`/auth`);
+  } else {
+    return redirectUser(`/en`);
+  }
+} else {
+  return redirectUser(`${BASE_SITE_URL}/en`);
+}
 
 ---
 
