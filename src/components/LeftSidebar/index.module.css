@@ -1,0 +1,12 @@
+.section {
+  margin-bottom: 1rem;
+  max-width: 100% !important;
+}
+
+.section :global(.slds-tree__group-header) {
+  margin-left: 2rem;
+}
+
+:global(:root.theme-dark) .section div:hover {
+  background: rgba(21, 137, 238, 0.1);
+}

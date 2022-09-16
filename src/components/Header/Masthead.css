@@ -1,0 +1,11 @@
+.slds-global-header_container {
+  position: relative;
+}
+
+.slds-button-group {
+  display: -webkit-inline-box;
+}
+
+.slds-global-header {
+  box-shadow: none;
+}

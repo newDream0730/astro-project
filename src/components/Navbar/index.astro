@@ -1,0 +1,17 @@
+---
+import type { INavbarItemFrontMatter } from '../types/';
+import Navbar from './index';
+
+const navbarMarkdownInstances = await Astro.glob<INavbarItemFrontMatter>('../../pages/en/*/index.md');
+const navLinks = navbarMarkdownInstances.map(({ frontmatter: { linkLabel, href }, url }) => ({ linkLabel, href: url || href }));
+---
+
+<nav>
+  <Navbar client:load navLinks={navLinks} />
+</nav>
+
+<style lang="scss">
+  nav {
+    margin-bottom: 2rem;
+  }
+</style>

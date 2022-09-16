@@ -1,0 +1,27 @@
+---
+import { getUser, redirectUser } from "@astro-auth/core";
+import { BASE_SITE_URL } from "src/config.astro";
+
+const user = getUser({ client: Astro });
+
+if (!user) {
+  	return redirectUser(`/auth`);
+  } else {
+    return redirectUser(`/en`);
+  }
+// if(import.meta.env.PROD){
+//   if (!user) {
+//   	return redirectUser(`/auth`);
+//   } else {
+//     return redirectUser(`/en`);
+//   }
+// } else {
+//   return redirectUser(`${BASE_SITE_URL}/en`);
+// }
+
+---
+
+<!-- <script is:inline define:vars={{ BASE_SITE_URL }}>
+  // Redirect your homepage to the first page of documentation. // If you have a landing page, remove this script and add it here!
+  window.location.pathname = `${BASE_SITE_URL}/en`;
+</script>; -->

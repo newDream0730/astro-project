@@ -1,0 +1,22 @@
+h1 {
+  font-size: 3rem;
+  color: #5876a3;
+  font-weight: 300;
+  line-height: 1.25;
+  font-family: Salesforce Sans, Arial, sans-serif;
+}
+
+h2 {
+  font-family: Salesforce Sans, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1.75rem;
+  line-height: 1.25;
+}
+
+p {
+  font-size: 0.8125rem;
+}
+
+li {
+  font-size: 0.8125rem;
+}

@@ -1,0 +1,25 @@
+---
+import HeadCommon from '@components/HeadCommon.astro';
+import HeadSEO from '@components/HeadSEO.astro';
+import Login from './Login';
+
+const { frontmatter = {} } = Astro.props;
+---
+
+<html dir={frontmatter.dir ?? 'ltr'} lang={frontmatter.lang ?? 'en-us'} class="initial">
+  <head>
+    <HeadSEO {frontmatter} />
+    <HeadCommon />
+    <title>
+    </title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <Login client:load />
+  </body>
+</html>

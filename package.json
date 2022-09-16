@@ -1,0 +1,67 @@
+{
+  "name": "gpm-lds-astro",
+  "repository": "https://github.com/shah/gpm-lds-astro.git",
+  "version": "0.0.2",
+  "private": false,
+  "description": "Framework to build GPM based sites.",
+  "author": "Shahid N. Shah",
+  "homepage": "https://github.com/shah/gpm-lds-astro",
+  "keywords": [
+    "GPM",
+    "astro",
+    "templates",
+    "framework"
+  ],
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "prepare": "husky install",
+    "postinstall": "cd src/components && npm link && cd ../../ && npm link @gpm-lds-astro/components && cd src/layouts && npm link && cd ../../ && npm link @gpm-lds-astro/layouts"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts,tsx,astro}": [
+      "eslint"
+    ],
+    "src/**/*.{json,md,html,tsx,astro}": [
+      "prettier"
+    ]
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@astrojs/react": "^0.1.2",
+    "react": "^17.0.2 || ^18.0.0",
+    "react-dom": "^17.0.2 || ^18.0.0"
+  },
+  "dependencies": {
+    "@astro-auth/client": "^1.0.2",
+    "@astro-auth/core": "^1.0.10",
+    "@astro-auth/providers": "^1.0.4",
+    "@astro-auth/ui": "^1.0.3",
+    "@astrojs/mdx": "^0.11.1",
+    "@astrojs/netlify": "^1.0.3",
+    "@astrojs/renderer-react": "^0.5.0",
+    "@astrojs/vercel": "^0.2.1",
+    "@docsearch/css": "^3.2.1",
+    "@docsearch/react": "^3.2.1",
+    "@gpm-lds-astro/components": "^0.0.5",
+    "@types/react": "^18.0.18",
+    "@types/uuid": "^8.3.4",
+    "@typescript-eslint/parser": "^5.36.2",
+    "astro": "^1.0.0-beta.28",
+    "eslint": "^8.23.0",
+    "eslint-plugin-astro": "^0.18.0",
+    "eslint-plugin-react": "^7.31.6",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "prettier-plugin-astro": "^0.5.4",
+    "sass": "^1.54.8",
+    "uuid": "^8.3.2"
+  }
+}

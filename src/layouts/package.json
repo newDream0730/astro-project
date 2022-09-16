@@ -1,0 +1,33 @@
+{
+  "name": "@gpm-lds-astro/layouts",
+  "repository": "https://github.com/shah/gpm-lds-astro.git",
+  "version": "0.2.0",
+  "private": false,
+  "description": "Layouts of the LDS Astro template.",
+  "author": "Shahid N. Shah",
+  "homepage": "https://github.com/shah/gpm-lds-astro",
+  "keywords": [
+    "GPM",
+    "astro",
+    "templates",
+    "framework"
+  ],
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@gpm-lds-astro/components": "^0.1.0"
+  },
+  "devDependencies": {
+    "astro": "^1.0.6",
+    "sass": "^1.54.5"
+  }
+}

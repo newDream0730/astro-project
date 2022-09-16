@@ -1,0 +1,41 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Container from '@components/Container/index.astro';
+import ContentGrid from '@components/ContentGrid/index.astro';
+import ChildNav from '@components/ChildNav';
+import { transformToNavItems, getLastItemOfArray } from '@utils/misc';
+
+const { frontmatter = {}, headings } = Astro.props;
+
+// const { pathname } = Astro.url;
+
+const canonicalURL = Astro.canonicalURL;
+const pathname = canonicalURL.pathname;
+
+const pathnameSplittedBySlash = pathname.split('/').filter(Boolean);
+const currentDirectory = getLastItemOfArray(pathnameSplittedBySlash);
+
+const directChildRegex = new RegExp(`/${currentDirectory}\/[a-zA-Z0-9-]+$`, '');
+const allPages = await Astro.glob('../pages/**');
+const directChildDirectories = allPages.filter(page => directChildRegex.test(page.url));
+const childNavItems = transformToNavItems(directChildDirectories);
+---
+
+<BaseLayout>
+  <!-- <h6>Pathname:</h6>
+  <p>{pathname}</p>
+
+  <h6>CurrentDirectory:</h6>
+  <pre>{JSON.stringify(currentDirectory)}</pre>
+
+  <h6>directChildRegex:</h6>
+  <p>{directChildRegex}</p> -->
+
+  <Container>
+    <ContentGrid {frontmatter} {headings}>
+      <slot />
+    </ContentGrid>
+
+    <ChildNav navItems={childNavItems} client:load />
+  </Container>
+</BaseLayout>

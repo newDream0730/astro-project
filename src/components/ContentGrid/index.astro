@@ -1,0 +1,21 @@
+---
+import PageContent from '@components/PageContent/PageContent.astro';
+
+const { frontmatter = {}, headings } = Astro.props;
+---
+
+<div id="grid-main">
+  <PageContent {frontmatter} {headings}>
+    <slot />
+  </PageContent>
+</div>
+
+<style lang="scss">
+  #grid-main {
+    padding: var(--doc-padding) var(--gutter);
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+</style>

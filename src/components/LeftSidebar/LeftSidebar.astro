@@ -1,0 +1,36 @@
+---
+import type { ILeftSidebarSection } from '@components/types';
+import { getLanguageFromURL } from '../../languages';
+import { SIDEBAR_SECTIONS } from '@governance/index';
+import LeftSidebarSection from '@components/LeftSidebar/LeftSidebarSection';
+import classes from './index.module.css';
+
+const { currentPage } = Astro.props;
+const langCode = getLanguageFromURL(currentPage);
+const sidebarSections = SIDEBAR_SECTIONS[langCode || 'en']!;
+---
+
+<nav class={classes.left_sidebar} aria-labelledby="grid-left">
+  {sidebarSections.map((section: ILeftSidebarSection) => <LeftSidebarSection client:load section={section} />)}
+</nav>
+
+<style>
+  .left_sidebar {
+    width: 100%;
+  }
+
+  @media (min-width: 50em) {
+    .left_sidebar {
+      padding-top: var(--doc-padding);
+    }
+  }
+</style>
+
+<script is:inline>
+  window.addEventListener('DOMContentLoaded', event => {
+    var target = document.querySelector('[aria-current="page"]');
+    if (target && target.offsetTop > window.innerHeight - 100) {
+      document.querySelector('.nav-groups').scrollTop = target.offsetTop;
+    }
+  });
+</script>

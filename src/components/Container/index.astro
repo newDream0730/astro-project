@@ -1,0 +1,18 @@
+<div>
+  <slot />
+</div>
+
+<style lang="scss">
+  div {
+    width: 90%;
+    max-width: 1250px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 1000px) {
+    div {
+      width: 95%;
+      max-width: unset;
+    }
+  }
+</style>
