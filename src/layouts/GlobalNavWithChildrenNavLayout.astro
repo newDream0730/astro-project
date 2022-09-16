@@ -9,7 +9,7 @@ const { frontmatter = {}, headings } = Astro.props;
 
 // const { pathname } = Astro.url;
 
-const canonicalURL = Astro.canonicalURL;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const pathname = canonicalURL.pathname;
 
 const pathnameSplittedBySlash = pathname.split('/').filter(Boolean);

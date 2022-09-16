@@ -21,8 +21,8 @@ import * as CONFIG from '../config.astro';
 
 const { frontmatter = {} } = Astro.props;
 
-const canonicalURL = Astro.canonicalURL;
-const currentPage = canonicalURL.pathname;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const currentPage = Astro.url.pathname;
 ---
 
 <html dir={frontmatter.dir ?? 'ltr'} lang={frontmatter.lang ?? 'en-us'} class="initial">
